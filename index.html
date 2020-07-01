@@ -317,7 +317,7 @@ Miss you, Meg meg!
             form.addEventListener('submit', e => {
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thank you for contacting me! I will be in touch as soon as posible.", reloadForm()))
+                .then(response => alert("Thank you for contacting me! I will be in touch as soon as possible.", reloadForm()))
                 .catch(error => console.error('Error!', error.message))
             })      
             
