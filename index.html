@@ -69,7 +69,17 @@
     <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
         <div class="hero-container" data-aos="fade-in">
             <h1>Kim Tablac</h1>
-            <p>I'm a <span class="typed" data-typed-items="Developer, Freelancer, WordPress Expert"></span></p>
+            <p>I'm a <span class="typed" data-typed-items="Web Developer, Freelancer, WordPress Expert"></span></p>
+            <div class="d-flex">
+                   <a href="#about" type="button" class="hvr-ripple-out btn btn-show-more scrollto">Show More <i class="icofont-swoosh-down fa-5x" style="font-size: inherit;"></i></a>
+                   
+            </div>
+            <div class="middle">
+                <div class="mouse">
+                
+                </div>
+            </div>
+
         </div>
     </section>
     <!-- End Hero -->
@@ -82,7 +92,7 @@
 
                 <div class="section-title">
                     <h2>About</h2>
-                    <p><b>I'm a Web Developer and Web Designer from Quezon City, Philippines.</b> I am a self-motivated individual with well developed IT skills and an ability to quickly learn new technologies.</p>
+                    <p><b>I'm a Web Developer and Web Designer from Quezon City, Philippines.</b> I am a self-motivated individual with well developed IT skills and an ability to quickly learn new technologies.</p>                   
                 </div>
 
                 <div class="row">
@@ -99,7 +109,7 @@
                                 <ul>
                                     <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> tablac.kimpoy@gmail.com</li>
                                     <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> 09270633353</li>
-                                    <li><i class="icofont-rounded-right"></i> <strong>City:</strong> Quezon City, Philippines</li>
+                                    <li><i class="icofont-rounded-right"></i> <strong>Location:</strong> Quezon City, Philippines</li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
@@ -298,7 +308,7 @@
     <!-- End  Footer -->
 
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
+    
     <!-- Vendor JS Files -->
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyO9UvLrP6mXfj0Ggq0uD3_7Kd44qmcCHBYzY8JTvqJEsWUk8EY/exec'
@@ -306,13 +316,14 @@
             form.addEventListener('submit', e => {
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon...", reloadForm()))
+                .then(response => alert("Thank you for contacting me! I will be in touch as soon as posible.", reloadForm()))
                 .catch(error => console.error('Error!', error.message))
             })      
             
             function reloadForm(){
                 document.getElementById("clientsForm").reset();
             }
+          
     </script>
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
