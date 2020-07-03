@@ -720,7 +720,9 @@ section {
 .services .title a {
     color: #343a40;
 }
-
+.h4 .title:hover{
+    color: orangered;
+}
 .services .title a:hover {
     color: orangered;
 }
