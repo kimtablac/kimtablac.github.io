@@ -280,7 +280,7 @@ h6 {
 #hero:before {
     content: "";
     background: rgba(39, 27, 11, 0.192);
-    position: fixed;
+    position: relative;
     bottom: 0;
     top: 0;
     left: 0;
