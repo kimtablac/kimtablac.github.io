@@ -59,98 +59,50 @@ h6 {
     transition: background 0.2s ease-in-out;
 }
 /*--------------------------------------------------------------
-#Show more
+#arow down animation
 --------------------------------------------------------------*/
-.middle{
+/*box-arrow-down*/
+.box-arrow-down{
     position: absolute;
-    top: 360px;
+    top: 340px;
     left: 50%;
-    transform: translate(-50%);     
+    transform: translate(-50%);       
 }
-.mouse{
-    width: 20px;
-    height: 40px;
-    border: 2px solid #fff;
-    border-radius: 60px;
-}
-.mouse::before{
+.box-arrow-down span{
     content: "";
-    width: 5px;
-    height: 5px;
-    position: absolute;
-    top: 5px;
-    background: #fff;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius:50%;
-    opacity: 1;
-    animation: mouse 2s infinite;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: rotate(45deg);
+    margin: -5px;
+    animation: animate 2s infinite;
+    
 }
-@keyframes mouse{
-    from{
-        opacity: 1;
-        top: 5px;
-    }
-    to{
+.box-arrow-down span:nth-child(2)
+{
+    animation-delay: -0.2s;
+    
+}
+.box-arrow-down span:nth-child(3)
+{
+    animation-delay: -0.4s;
+}
+@keyframes animate{
+    0%{
         opacity: 0;
-        top: 25px;
+        transform: rotate(45deg) translate(-15px, -15px);
+    }
+    50%{
+        opacity: 1;
+        
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(15px, 15px);
     }
 }
-/*----
-Try
-------*/
-.btn-show-more{
-    background: orangered;
-    color: #fff;
-    border: 1px solid orangered;
-    line-height: 30px;
-}
-.btn-show-more:hover{
-    color: #fff;
-}
-/* Ripple Out */
-@-webkit-keyframes hvr-ripple-out {
-  100% {
-    top: -12px;
-    right: -12px;
-    bottom: -12px;
-    left: -12px;
-    opacity: 0;
-  }
-}
-@keyframes hvr-ripple-out {
-  100% {
-    top: -12px;
-    right: -12px;
-    bottom: -12px;
-    left: -12px;
-    opacity: 0;
-  }
-}
-.hvr-ripple-out {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-}
-.hvr-ripple-out:before {
-  content: '';
-  position: absolute;
-  border: orangered solid 6px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-}
-.hvr-ripple-out:hover:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {
-  -webkit-animation-name: hvr-ripple-out;
-  animation-name: hvr-ripple-out;
-}
-
 
 /*--------------------------------------------------------------
 # Header
