@@ -1339,7 +1339,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .jrcc-nav-toggle {
     position: absolute;
     right: 0px;
-    top: 85px;
+    top: 55px;
     z-index: 21;
     padding: 6px 0 0 0;
     display: block;
