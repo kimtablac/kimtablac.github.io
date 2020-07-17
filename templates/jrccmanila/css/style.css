@@ -1141,6 +1141,11 @@ h1, h2, h3, h4, h5, h6, figure {
     display: block;
   }
 }
+/* @media screen and (max-width: 468px) {
+  #fh5co-offcanvas {
+    display: block;
+  }
+} */
 .offcanvas #fh5co-offcanvas {
   -moz-transform: translateX(0px);
   -webkit-transform: translateX(0px);
@@ -1332,22 +1337,23 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .jrcc-nav-toggle {
-  position: absolute;
-  right: 0px;
-  top: 55px;
-  z-index: 21;
-  padding: 6px 0 0 0;
-  display: block;
-  margin: 0 auto;
-  display: none;
-  height: 44px;
-  width: 44px;
-  z-index: 2001;
-  border-bottom: none !important;
+    position: absolute;
+    right: 0px;
+    top: 85px;
+    z-index: 21;
+    padding: 6px 0 0 0;
+    display: block;
+    margin: 0 auto;
+    display: none;
+    height: 44px;
+    width: 44px;
+    z-index: 2001;
+    border-bottom: none !important;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width : 768px){
   .jrcc-nav-toggle {
     display: block;
+    
   }
 }
 
