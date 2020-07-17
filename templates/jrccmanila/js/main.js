@@ -239,10 +239,10 @@
 
 	  	});
 
-	  	$('#jrcc-hero .flexslider .slides > li').css('height', $(window).height());	
-	  	$(window).resize(function(){
-	  		$('#jrcc-hero .flexslider .slides > li').css('height', $(window).height());	
-	  	});
+	  	// $('#jrcc-hero .flexslider .slides > li').css('height', $(window).height());	
+	  	// $(window).resize(function(){
+	  	// 	$('#jrcc-hero .flexslider .slides > li').css('height', $(window).height());	
+	  	// });
 
 	};
 
