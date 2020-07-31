@@ -1,18 +1,57 @@
 <!doctype html>
-<title>Site Maintenance</title>
-<style>
-  body { text-align: center; padding: 150px; }
-  h1 { font-size: 50px; }
-  body { font: 20px Helvetica, sans-serif; color: #333; }
-  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
-  a { color: #dc8100; text-decoration: none; }
-  a:hover { color: #333; text-decoration: none; }
-</style>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<article>
-    <h1>Oooopppsss!</h1>
-    <div>
-         <p class="lead">Sorry for the inconvenience but I&rsquo;m performing major improvements at the moment, will be back soon!</p>
-         <p>&mdash; Kim Tablac.</p>
+    <title>Site Maintenance</title>
+    <style>
+  body { 
+      text-align: center; padding: 150px; 
+      }
+  h1 { 
+      font-size: 50px; }
+  body { 
+      background: url("img/header-bg.jpg") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+        position: cover;
+       
+      font: 20px Helvetica, sans-serif; 
+      color: #fff; 
+      }
+  article {
+    display: block; 
+    text-align: left; 
+    float: left;
+    width: 650px;
+    margin: 0 auto; 
+       }
+    @media  screen and (min-width: 601px){
+        div.container-fluid{
+            font-size: 24px;
+        }
+    }
+     @media  screen and (max-width: 60px){
+        div.container-fluid{
+            font-size: 24px;
+        }
+    }
+</style>
+  </head>
+  <body>
+  <div class="container-fluid">
+   <article class="article">
+        <h1 class="col-md-12">Ooooppss!</h1>
+        <div class="col-md-12 col-md-6 col-sm-12">
+            <p class="lead">Sorry for the inconvenience but I&rsquo;m performing major improvements at the moment, will be back soon!</p>
+            <p>&mdash; Kim Tablac.</p>
+        </div>
+    </article>
     </div>
-</article>
+    
+  </body>
+</html>
