@@ -1,13 +1,13 @@
 jQuery(function($){
 
-var SURMOUNTC = window.SURMOUNTC || {};
+var BRUSHED = window.BRUSHED || {};
 
 /* ==================================================
    Mobile Navigation
 ================================================== */
 var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
 
-SURMOUNTC.mobileNav = function(){
+BRUSHED.mobileNav = function(){
 	var windowWidth = $(window).width();
 	
 	if( windowWidth <= 979 ) {
@@ -23,7 +23,7 @@ SURMOUNTC.mobileNav = function(){
 	}
 }
 
-SURMOUNTC.listenerMenu = function(){
+BRUSHED.listenerMenu = function(){
 	$('#mobile-nav').on('click', function(e){
 		$(this).toggleClass('open');
 		
@@ -46,7 +46,7 @@ SURMOUNTC.listenerMenu = function(){
    Slider Options
 ================================================== */
 
-SURMOUNTC.slider = function(){
+BRUSHED.slider = function(){
 	$.supersized({
 		// Functionality
 		slideshow               :   1,			// Slideshow on/off
@@ -77,10 +77,10 @@ SURMOUNTC.slider = function(){
 		thumb_links				:	0,			// Individual thumb links for each slide
 		thumbnail_navigation    :   0,			// Thumbnail navigation
 		slides 					:  	[			// Slideshow Images
-											{image : 'img/slider-images/image01.jpg', title : '<div class="slide-content"></div>', thumb : '', url : ''},
-											{image : 'img/slider-images/image02.jpg', title : '<div class="slide-content">SURMOUNT CREATIVE</div>', thumb : '', url : ''},
-											{image : 'img/slider-images/image03.jpg', title : '<div class="slide-content">SURMOUNT CREATIVE</div>', thumb : '', url : ''},
-											{image : 'img/slider-images/image04.jpg', title : '<div class="slide-content">SURMOUNT CREATIVE</div>', thumb : '', url : ''}  
+											{image : '_include/img/slider-images/image01.jpg', title : '<div class="slide-content">Brushed</div>', thumb : '', url : ''},
+											{image : '_include/img/slider-images/image02.jpg', title : '<div class="slide-content">Brushed</div>', thumb : '', url : ''},
+											{image : '_include/img/slider-images/image03.jpg', title : '<div class="slide-content">Brushed</div>', thumb : '', url : ''},
+											{image : '_include/img/slider-images/image04.jpg', title : '<div class="slide-content">Brushed</div>', thumb : '', url : ''}  
 									],
 									
 		// Theme Options			   
@@ -96,7 +96,7 @@ SURMOUNTC.slider = function(){
    Navigation Fix
 ================================================== */
 
-SURMOUNTC.nav = function(){
+BRUSHED.nav = function(){
 	$('.sticky-nav').waypoint('sticky');
 }
 
@@ -105,7 +105,7 @@ SURMOUNTC.nav = function(){
    Filter Works
 ================================================== */
 
-SURMOUNTC.filter = function (){
+BRUSHED.filter = function (){
 	if($('#projects').length > 0){		
 		var $container = $('#projects');
 		
@@ -158,7 +158,7 @@ SURMOUNTC.filter = function (){
    FancyBox
 ================================================== */
 
-SURMOUNTC.fancyBox = function(){
+BRUSHED.fancyBox = function(){
 	if($('.fancybox').length > 0 || $('.fancybox-media').length > 0 || $('.fancybox-various').length > 0){
 		
 		$(".fancybox").fancybox({				
@@ -187,7 +187,7 @@ SURMOUNTC.fancyBox = function(){
    Contact Form
 ================================================== */
 
-SURMOUNTC.contactForm = function(){
+BRUSHED.contactForm = function(){
 	$("#contact-submit").on('click',function() {
 		$contact_form = $('#contact-form');
 		
@@ -195,7 +195,7 @@ SURMOUNTC.contactForm = function(){
 		
 		$.ajax({
 			type: "POST",
-			url: "php/contact.php",
+			url: "_include/php/contact.php",
 			data: fields,
 			dataType: 'json',
 			success: function(response) {
@@ -217,12 +217,12 @@ SURMOUNTC.contactForm = function(){
    Twitter Feed
 ================================================== */
 
-SURMOUNTC.tweetFeed = function(){
+BRUSHED.tweetFeed = function(){
 	
 	var valueTop = -64; // Margin Top Value
 	
     $("#ticker").tweet({
-          modpath: 'js/twitter/',
+          modpath: '_include/js/twitter/',
           username: "Bluxart", // Change this with YOUR ID
           page: 1,
           avatar_size: 0,
@@ -250,7 +250,7 @@ SURMOUNTC.tweetFeed = function(){
    Menu Highlight
 ================================================== */
 
-SURMOUNTC.menu = function(){
+BRUSHED.menu = function(){
 	$('#menu-nav, #menu-nav-mobile').onePageNav({
 		currentClass: 'current',
     	changeHash: false,
@@ -266,7 +266,7 @@ SURMOUNTC.menu = function(){
    Next Section
 ================================================== */
 
-SURMOUNTC.goSection = function(){
+BRUSHED.goSection = function(){
 	$('#nextsection').on('click', function(){
 		$target = $($(this).attr('href')).offset().top-30;
 		
@@ -279,7 +279,7 @@ SURMOUNTC.goSection = function(){
    GoUp
 ================================================== */
 
-SURMOUNTC.goUp = function(){
+BRUSHED.goUp = function(){
 	$('#goUp').on('click', function(){
 		$target = $($(this).attr('href')).offset().top-30;
 		
@@ -293,7 +293,7 @@ SURMOUNTC.goUp = function(){
 	Scroll to Top
 ================================================== */
 
-SURMOUNTC.scrollToTop = function(){
+BRUSHED.scrollToTop = function(){
 	var windowWidth = $(window).width(),
 		didScroll = false;
 
@@ -325,7 +325,7 @@ SURMOUNTC.scrollToTop = function(){
    Thumbs / Social Effects
 ================================================== */
 
-SURMOUNTC.utils = function(){
+BRUSHED.utils = function(){
 	
 	$('.item-thumbs').bind('touchstart', function(){
 		$(".active").removeClass("active");
@@ -348,7 +348,7 @@ SURMOUNTC.utils = function(){
    Accordion
 ================================================== */
 
-SURMOUNTC.accordion = function(){
+BRUSHED.accordion = function(){
 	var accordion_trigger = $('.accordion-heading.accordionize');
 	
 	accordion_trigger.delegate('.accordion-toggle','click', function(event){
@@ -370,7 +370,7 @@ SURMOUNTC.accordion = function(){
    Toggle
 ================================================== */
 
-SURMOUNTC.toggle = function(){
+BRUSHED.toggle = function(){
 	var accordion_trigger_toggle = $('.accordion-heading.togglize');
 	
 	accordion_trigger_toggle.delegate('.accordion-toggle','click', function(event){
@@ -390,7 +390,7 @@ SURMOUNTC.toggle = function(){
    Tooltip
 ================================================== */
 
-SURMOUNTC.toolTip = function(){ 
+BRUSHED.toolTip = function(){ 
     $('a[data-toggle=tooltip]').tooltip();
 }
 
@@ -399,13 +399,13 @@ SURMOUNTC.toolTip = function(){
 	Init
 ================================================== */
 
-SURMOUNTC.slider();
+BRUSHED.slider();
 
 $(document).ready(function(){
 	Modernizr.load([
 	{
 		test: Modernizr.placeholder,
-		nope: 'js/placeholder.js', 
+		nope: '_include/js/placeholder.js', 
 		complete : function() {
 				if (!Modernizr.placeholder) {
 						Placeholders.init({
@@ -430,25 +430,25 @@ $(document).ready(function(){
 		}
 	});
 	
-	SURMOUNTC.nav();
-	SURMOUNTC.mobileNav();
-	SURMOUNTC.listenerMenu();
-	SURMOUNTC.menu();
-	SURMOUNTC.goSection();
-	SURMOUNTC.goUp();
-	SURMOUNTC.filter();
-	SURMOUNTC.fancyBox();
-	SURMOUNTC.contactForm();
-	SURMOUNTC.tweetFeed();
-	SURMOUNTC.scrollToTop();
-	SURMOUNTC.utils();
-	SURMOUNTC.accordion();
-	SURMOUNTC.toggle();
-	SURMOUNTC.toolTip();
+	BRUSHED.nav();
+	BRUSHED.mobileNav();
+	BRUSHED.listenerMenu();
+	BRUSHED.menu();
+	BRUSHED.goSection();
+	BRUSHED.goUp();
+	BRUSHED.filter();
+	BRUSHED.fancyBox();
+	BRUSHED.contactForm();
+	BRUSHED.tweetFeed();
+	BRUSHED.scrollToTop();
+	BRUSHED.utils();
+	BRUSHED.accordion();
+	BRUSHED.toggle();
+	BRUSHED.toolTip();
 });
 
 $(window).resize(function(){
-	SURMOUNTC.mobileNav();
+	BRUSHED.mobileNav();
 });
 
 });
