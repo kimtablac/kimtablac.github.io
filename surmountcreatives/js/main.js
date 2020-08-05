@@ -1,4 +1,4 @@
-jQuery(function($){
+$( document ).ready(function($){
 
 var SURMOUNTC = window.SURMOUNTC || {};
 
