@@ -1,13 +1,13 @@
 jQuery(function($){
 
-var  = window. || {};
+var SURMOUNTC = window.SURMOUNTC || {};
 
 /* ==================================================
    Mobile Navigation
 ================================================== */
 var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
 
-.mobileNav = function(){
+SURMOUNTC.mobileNav = function(){
 	var windowWidth = $(window).width();
 	
 	if( windowWidth <= 979 ) {
@@ -23,7 +23,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
 	}
 }
 
-.listenerMenu = function(){
+SURMOUNTC.listenerMenu = function(){
 	$('#mobile-nav').on('click', function(e){
 		$(this).toggleClass('open');
 		
@@ -46,7 +46,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    Slider Options
 ================================================== */
 
-.slider = function(){
+SURMOUNTC.slider = function(){
 	$.supersized({
 		// Functionality
 		slideshow               :   1,			// Slideshow on/off
@@ -78,9 +78,9 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
 		thumbnail_navigation    :   0,			// Thumbnail navigation
 		slides 					:  	[			// Slideshow Images
 											{image : 'img/slider-images/image01.jpg', title : '<div class="slide-content"></div>', thumb : '', url : ''},
-											{image : 'img/slider-images/image02.jpg', title : '<div class="slide-content">Surmount Creatives | Slider 2</div>', thumb : '', url : ''},
-											{image : 'img/slider-images/image03.jpg', title : '<div class="slide-content">Surmount Creatives | Slider 3</div>', thumb : '', url : ''},
-											{image : 'img/slider-images/image04.jpg', title : '<div class="slide-content">Surmount Creatives | Slider 4</div>', thumb : '', url : ''}  
+											{image : 'img/slider-images/image02.jpg', title : '<div class="slide-content">SURMOUNT CREATIVE</div>', thumb : '', url : ''},
+											{image : 'img/slider-images/image03.jpg', title : '<div class="slide-content">SURMOUNT CREATIVE</div>', thumb : '', url : ''},
+											{image : 'img/slider-images/image04.jpg', title : '<div class="slide-content">SURMOUNT CREATIVE</div>', thumb : '', url : ''}  
 									],
 									
 		// Theme Options			   
@@ -96,7 +96,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    Navigation Fix
 ================================================== */
 
-.nav = function(){
+SURMOUNTC.nav = function(){
 	$('.sticky-nav').waypoint('sticky');
 }
 
@@ -105,7 +105,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    Filter Works
 ================================================== */
 
-.filter = function (){
+SURMOUNTC.filter = function (){
 	if($('#projects').length > 0){		
 		var $container = $('#projects');
 		
@@ -158,7 +158,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    FancyBox
 ================================================== */
 
-.fancyBox = function(){
+SURMOUNTC.fancyBox = function(){
 	if($('.fancybox').length > 0 || $('.fancybox-media').length > 0 || $('.fancybox-various').length > 0){
 		
 		$(".fancybox").fancybox({				
@@ -187,7 +187,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    Contact Form
 ================================================== */
 
-.contactForm = function(){
+SURMOUNTC.contactForm = function(){
 	$("#contact-submit").on('click',function() {
 		$contact_form = $('#contact-form');
 		
@@ -217,7 +217,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    Twitter Feed
 ================================================== */
 
-.tweetFeed = function(){
+SURMOUNTC.tweetFeed = function(){
 	
 	var valueTop = -64; // Margin Top Value
 	
@@ -250,7 +250,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    Menu Highlight
 ================================================== */
 
-.menu = function(){
+SURMOUNTC.menu = function(){
 	$('#menu-nav, #menu-nav-mobile').onePageNav({
 		currentClass: 'current',
     	changeHash: false,
@@ -266,7 +266,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    Next Section
 ================================================== */
 
-.goSection = function(){
+SURMOUNTC.goSection = function(){
 	$('#nextsection').on('click', function(){
 		$target = $($(this).attr('href')).offset().top-30;
 		
@@ -279,7 +279,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    GoUp
 ================================================== */
 
-.goUp = function(){
+SURMOUNTC.goUp = function(){
 	$('#goUp').on('click', function(){
 		$target = $($(this).attr('href')).offset().top-30;
 		
@@ -293,7 +293,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
 	Scroll to Top
 ================================================== */
 
-.scrollToTop = function(){
+SURMOUNTC.scrollToTop = function(){
 	var windowWidth = $(window).width(),
 		didScroll = false;
 
@@ -325,7 +325,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    Thumbs / Social Effects
 ================================================== */
 
-.utils = function(){
+SURMOUNTC.utils = function(){
 	
 	$('.item-thumbs').bind('touchstart', function(){
 		$(".active").removeClass("active");
@@ -348,7 +348,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    Accordion
 ================================================== */
 
-.accordion = function(){
+SURMOUNTC.accordion = function(){
 	var accordion_trigger = $('.accordion-heading.accordionize');
 	
 	accordion_trigger.delegate('.accordion-toggle','click', function(event){
@@ -370,7 +370,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    Toggle
 ================================================== */
 
-.toggle = function(){
+SURMOUNTC.toggle = function(){
 	var accordion_trigger_toggle = $('.accordion-heading.togglize');
 	
 	accordion_trigger_toggle.delegate('.accordion-toggle','click', function(event){
@@ -390,7 +390,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
    Tooltip
 ================================================== */
 
-.toolTip = function(){ 
+SURMOUNTC.toolTip = function(){ 
     $('a[data-toggle=tooltip]').tooltip();
 }
 
@@ -399,7 +399,7 @@ var mobileMenuClone = $('#menu').clone().attr('id', 'navigation-mobile');
 	Init
 ================================================== */
 
-.slider();
+SURMOUNTC.slider();
 
 $(document).ready(function(){
 	Modernizr.load([
@@ -430,25 +430,25 @@ $(document).ready(function(){
 		}
 	});
 	
-	.nav();
-	.mobileNav();
-	.listenerMenu();
-	.menu();
-	.goSection();
-	.goUp();
-	.filter();
-	.fancyBox();
-	.contactForm();
-	.tweetFeed();
-	.scrollToTop();
-	.utils();
-	.accordion();
-	.toggle();
-	.toolTip();
+	SURMOUNTC.nav();
+	SURMOUNTC.mobileNav();
+	SURMOUNTC.listenerMenu();
+	SURMOUNTC.menu();
+	SURMOUNTC.goSection();
+	SURMOUNTC.goUp();
+	SURMOUNTC.filter();
+	SURMOUNTC.fancyBox();
+	SURMOUNTC.contactForm();
+	SURMOUNTC.tweetFeed();
+	SURMOUNTC.scrollToTop();
+	SURMOUNTC.utils();
+	SURMOUNTC.accordion();
+	SURMOUNTC.toggle();
+	SURMOUNTC.toolTip();
 });
 
 $(window).resize(function(){
-	.mobileNav();
+	SURMOUNTC.mobileNav();
 });
 
 });
