@@ -638,7 +638,7 @@ img {
 
 /* :: Portfolio Area CSS */
 .portfolio-area {
-  overflow-x: scroll; -webkit-overflow-scrolling: touch; touch-action: auto; -ms-touch-action: auto; }
+  overflow-x: hidden; -webkit-overflow-scrolling: touch; touch-action: auto; -ms-touch-action: auto; }
   .portfolio-area .portfolio-title h2 {
     font-size: 56px;
     text-align: center;
