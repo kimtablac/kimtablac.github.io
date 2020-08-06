@@ -638,7 +638,7 @@ img {
 
 /* :: Portfolio Area CSS */
 .portfolio-area {
-  overflow-x: visible;
+  overflow-x: hidden;
    touch-action: auto; -ms-touch-action: auto;
   -ms-touch-action: auto;}
   .portfolio-area .portfolio-title h2 {
