@@ -23,8 +23,8 @@
     padding: 0;
 }
 
-body {
-    font-family: $font-family;
+body, html {
+    font-family: $font-family; overflow-x: hidden;
 }
 
 h1,
@@ -752,9 +752,7 @@ img {
 /* :: Portfolio Area CSS */
 
 .portfolio-area {
-    overflow-x: hidden;
-    position: relative;
-    z-index: 1;
+    overflow-x: hidden; position: relative;  
     .portfolio-title {
         h2 {
             font-size: 56px;
