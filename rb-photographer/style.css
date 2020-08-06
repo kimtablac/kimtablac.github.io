@@ -13,7 +13,7 @@
   padding: 0; }
 
 body {
-  font-family: "Roboto", sans-serif; height: 100%;}
+  font-family: "Roboto", sans-serif;}
 
 h1,
 h2,
@@ -639,7 +639,16 @@ img {
 /* :: Portfolio Area CSS */
 .portfolio-area {
   overflow-x: hidden;
-  touch-action: auto;
+  position: relative;
+  z-index: 1;  
+  }
+  .scrollable-rb{
+    overflow-y: scroll;
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    right: -30px;
+
   }
   .portfolio-area .portfolio-title h2 {
     font-size: 56px;
