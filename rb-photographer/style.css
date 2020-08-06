@@ -639,8 +639,12 @@ img {
 /* :: Portfolio Area CSS */
 .portfolio-area {
   overflow-x: hidden;
+  overflow-y: scroll;
    touch-action: auto; -ms-touch-action: auto;
   -ms-touch-action: auto;}
+  .portfolio-area:: ::-webkit-scrollbar{
+    width: 0;
+  }
   .portfolio-area .portfolio-title h2 {
     font-size: 56px;
     text-align: center;
