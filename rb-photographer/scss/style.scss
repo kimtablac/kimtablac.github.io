@@ -753,6 +753,8 @@ img {
 
 .portfolio-area {
     overflow-x: hidden;
+    touch-action: auto;
+    -ms-touch-action: auto;
     .portfolio-title {
         h2 {
             font-size: 56px;
