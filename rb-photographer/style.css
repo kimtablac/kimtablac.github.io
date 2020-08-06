@@ -642,7 +642,7 @@ img {
   overflow-y: scroll;
    touch-action: auto; -ms-touch-action: auto;
   -ms-touch-action: auto;}
-  .portfolio-area:: ::-webkit-scrollbar{
+  .portfolio-area::-webkit-scrollbar{
     width: 0;
   }
   .portfolio-area .portfolio-title h2 {
