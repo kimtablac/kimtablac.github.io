@@ -638,10 +638,9 @@ img {
 
 /* :: Portfolio Area CSS */
 .portfolio-area {
-  overflow-x: hidden;
-  overflow-y: scroll;
-   touch-action: auto; -ms-touch-action: auto;
-  -ms-touch-action: auto;}
+  overflow-x:hidden;
+  overflow-y:scroll;
+  }
   .portfolio-area::-webkit-scrollbar{
     width: 0;
   }
