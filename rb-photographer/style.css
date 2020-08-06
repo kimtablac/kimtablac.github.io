@@ -638,11 +638,12 @@ img {
 
 /* :: Portfolio Area CSS */
 .portfolio-area {
-  overflow-x:scroll;
-  overflow-y:hidden;
+  overflow-x: auto;
+  overflow-y: scroll;
+  height: 400px;
   }
   .portfolio-area::-webkit-scrollbar{
-    width: 0;
+    display: none;
   }
   .portfolio-area .portfolio-title h2 {
     font-size: 56px;

@@ -277,7 +277,7 @@
     <!-- ***** Hero Area End ***** -->
 
     <!-- ***** Portfolio Area Start ***** -->
-    <div class="portfolio-area section-padding-100">
+    <div class="portfolio-area section-padding-100" onscroll="scrollRB()">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -448,6 +448,12 @@
             </div>
         </div>
     </footer>
+    <script type="text/javascript">
+        function scrollRB(){
+            var elmnt = getElementById("portfolio-area");
+            var y = elmnt.scrollTop;
+        }
+    </script>
     <!-- ***** Footer Area End ***** -->
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>

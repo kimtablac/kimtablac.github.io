@@ -752,8 +752,9 @@ img {
 /* :: Portfolio Area CSS */
 
 .portfolio-area {
-   overflow-x: scroll;
-   overflow-y: hidden;
+   overflow-x: auto;
+   overflow-y: scroll;
+   height: 400px;
     .portfolio-title {
         h2 {
             font-size: 56px;
