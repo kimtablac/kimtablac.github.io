@@ -264,7 +264,7 @@ img {
   -ms-overflow-style: none;
 }
 .hide-native-scrollbar::-webkit-scrollbar{
-  display: non;
+  display: none;
 }
 .section-padding-100 {
   padding: 100px 0; }
