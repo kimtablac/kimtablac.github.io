@@ -12,8 +12,8 @@
   margin: 0;
   padding: 0; }
 
-body, html {
-  font-family: "Roboto", sans-serif; overflow-x: hidden;}
+body {
+  font-family: "Roboto", sans-serif; }
 
 h1,
 h2,
@@ -638,7 +638,7 @@ img {
 
 /* :: Portfolio Area CSS */
 .portfolio-area {
-  overflow-x: hidden; position: relative; 
+  overflow-x: hidden; 
   } 
   .portfolio-area .portfolio-title h2 {
     font-size: 56px;
