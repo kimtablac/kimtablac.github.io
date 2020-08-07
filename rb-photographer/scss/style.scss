@@ -304,7 +304,13 @@ img {
         line-height: 46px;
     }
 }
-
+.hide-native-scrollbar{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
 .section-padding-100 {
     padding: 100px 0;
 }
