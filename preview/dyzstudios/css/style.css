@@ -455,3 +455,18 @@ header {
   text-align: center;
   width: 100%;
 }
+
+.footer p {
+  margin-bottom: 0px;
+  font-size: 13px;
+  line-height: 80px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+}
+
+.footer p a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
