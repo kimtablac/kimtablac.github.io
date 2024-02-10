@@ -69,17 +69,6 @@
       z-index: 2;
     }
 
-    #settings-button {
-      display: none;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 1.5em;
-      color: #fff;
-      cursor: pointer;
-      z-index: 3;
-    }
-
     .valentine-button {
       font-size: 1.5em;
       margin: 10px;
@@ -125,28 +114,22 @@
       #rotation-notice {
         display: block;
       }
-
-      #settings-button {
-        display: block;
-      }
     }
   </style>
 </head>
 <body>
 
 <div id="rotation-notice">
-  <p>Rotate mo phone to landscape mode darling for the best viewing experience.</p>
+  <p>Please rotate your phone to landscape mode for the best viewing experience.</p>
 </div>
 
 <div id="video-container">
-  <video id="myVideo" controlsList="nodownload">
+  <video id="myVideo" controlsList="nodownload" onended="showYesNoButtons()">
     <source src="love.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <!-- Play button overlay -->
   <div id="play-button">&#9654;</div>
-  <!-- Settings button for mobile -->
-  <div id="settings-button" onclick="toggleSettings()">&#9881;</div>
 
   <!-- Yes and No buttons -->
   <div id="yes-no-buttons">
@@ -158,10 +141,7 @@
 <script>
   var video = document.getElementById("myVideo");
   var playButton = document.getElementById("play-button");
-  var settingsButton = document.getElementById("settings-button");
   var yesNoButtons = document.getElementById("yes-no-buttons");
-  var yesButton = document.getElementById("yes-button");
-  var noButton = document.getElementById("no-button");
   var rotationNotice = document.getElementById("rotation-notice");
 
   playButton.addEventListener("click", function() {
@@ -175,43 +155,13 @@
     }
   });
 
-  // Show video settings button after 1 minute
-  setTimeout(function() {
-    settingsButton.style.display = "block";
-  }, 60000); // 60,000 milliseconds = 1 minute
-
-  function toggleSettings() {
-    if (video.requestFullscreen) {
-      video.requestFullscreen();
-    } else if (video.mozRequestFullScreen) {
-      video.mozRequestFullScreen();
-    } else if (video.webkitRequestFullscreen) {
-      video.webkitRequestFullscreen();
-    }
+  // Function to show Yes and No buttons after video ends
+  function showYesNoButtons() {
+    // Show Yes and No buttons after 1 minute and 17 seconds
+    setTimeout(function() {
+      yesNoButtons.style.display = "block";
+    }, 77000); // 77,000 milliseconds = 1 minute and 17 seconds
   }
-
-  // Make the video full screen
-  window.addEventListener("resize", function() {
-    video.style.width = window.innerWidth + "px";
-    video.style.height = window.innerHeight + "px";
-  });
-
-  // Show Yes and No buttons after 1 minute and 14 seconds
-  setTimeout(function() {
-    yesNoButtons.style.display = "block";
-  }, 77000);
-
-  // Example event listeners for Yes and No buttons
-  yesButton.addEventListener("click", function() {
-    alert("You chose love! Happy Valentine's Day!");
-  });
-
-  noButton.addEventListener("click", function() {
-    alert("Sometimes love takes time. Happy Valentine's Day!");
-  });
-
-  // Disable the move-around animation for the No button
-  noButton.classList.remove("move-around");
 </script>
 
 </body>
