@@ -173,6 +173,17 @@
 
     // Remove the event listener to prevent multiple clicks
     document.getElementById("yes-button").removeEventListener("click", handleYesButtonClick);
+
+    // Request full-screen mode after video playback
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.mozRequestFullScreen) {
+      video.mozRequestFullScreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen();
+    }
   }
 
   document.getElementById("yes-button").addEventListener("click", handleYesButtonClick);
