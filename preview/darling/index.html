@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You Alone</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #111; /* Background color */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    #play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3em;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    #yes-no-buttons {
+      display: none;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 2;
+    }
+
+    .valentine-button {
+      font-size: 1.5em;
+      margin: 10px;
+      padding: 15px 30px;
+      cursor: pointer;
+      border: none;
+      color: #fff;
+      background-color: #ff4d6d;
+      border-radius: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .valentine-button:hover {
+      background-color: #ff3355;
+    }
+
+    /* Animation for the No button */
+    .move-around {
+      animation: none;
+    }
+
+    /* Disable the No button */
+    .no-button-disabled {
+      pointer-events: none;
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Responsive styling for smaller screens */
+    @media only screen and (max-width: 600px) {
+      #video-container {
+        position: relative; /* Set to relative for landscape mode */
+        padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+      }
+
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="video-container">
+  <video id="myVideo" controlsList="nodownload">
+    <source src="love.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <!-- Play button overlay -->
+  <div id="play-button">&#9654;</div>
+
+  <!-- Yes and No buttons -->
+  <div id="yes-no-buttons">
+    <button id="yes-button" class="valentine-button">Yes</button>
+    <button id="no-button" class="valentine-button move-around no-button-disabled">No</button>
+  </div>
+</div>
+
+<script>
+  var video = document.getElementById("myVideo");
+  var playButton = document.getElementById("play-button");
+  var yesNoButtons = document.getElementById("yes-no-buttons");
+  var yesButton = document.getElementById("yes-button");
+  var noButton = document.getElementById("no-button");
+
+  playButton.addEventListener("click", function() {
+    if (video.paused) {
+      video.play();
+      playButton.style.display = "none";
+    } else {
+      video.pause();
+    }
+  });
+
+  // Make the video full screen
+  window.addEventListener("resize", function() {
+    video.style.width = window.innerWidth + "px";
+    video.style.height = window.innerHeight + "px";
+  });
+
+  // Show Yes and No buttons after 1 minute and 14 seconds
+  setTimeout(function() {
+    yesNoButtons.style.display = "block";
+  }, 74000); // 74,000 milliseconds = 1 minute and 14 seconds
+
+  // Example event listeners for Yes and No buttons
+  yesButton.addEventListener("click", function() {
+    alert("You chose love! Happy Valentine's Day!");
+  });
+
+  noButton.addEventListener("click", function() {
+    alert("Sometimes love takes time. Happy Valentine's Day!");
+  });
+
+  // Disable the move-around animation for the No button
+  noButton.classList.remove("move-around");
+</script>
+
+</body>
+</html>
