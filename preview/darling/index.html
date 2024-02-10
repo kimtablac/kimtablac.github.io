@@ -162,6 +162,13 @@
     }
   };
 
+  video.addEventListener("playing", function() {
+    // This event is triggered when the video starts playing
+    // You can add your logic to display video settings here
+    // For example, you can show a button that opens the video settings
+    showVideoSettingsButton();
+  });
+
   // Event listener for the "Yes" button
   function handleYesButtonClick() {
     // Call your custom function or display a message
@@ -172,21 +179,32 @@
 
     // Remove the event listener to prevent multiple clicks
     document.getElementById("yes-button").removeEventListener("click", handleYesButtonClick);
-
-    // Request full-screen mode after video playback
-    if (video.requestFullscreen) {
-      video.requestFullscreen();
-    } else if (video.mozRequestFullScreen) {
-      video.mozRequestFullScreen();
-    } else if (video.webkitRequestFullscreen) {
-      video.webkitRequestFullscreen();
-    } else if (video.msRequestFullscreen) {
-      video.msRequestFullscreen();
-    }
   }
 
   document.getElementById("yes-button").addEventListener("click", handleYesButtonClick);
+
+  // Function to show video settings button (you can customize this)
+  function showVideoSettingsButton() {
+    // You can add your logic here to show the video settings button
+    // For example, you can create a button and append it to the DOM
+    var settingsButton = document.createElement("button");
+    settingsButton.textContent = "Video Settings";
+    settingsButton.className = "valentine-button";
+    settingsButton.onclick = function() {
+      // Add logic to open video settings here
+      alert("Open Video Settings");
+    };
+
+    // Append the button to a container (adjust this according to your HTML structure)
+    document.body.appendChild(settingsButton);
+  }
 </script>
+
+
+
+
+
+
 
 </body>
 </html>
