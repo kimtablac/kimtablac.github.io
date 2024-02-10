@@ -12,12 +12,26 @@
       height: 100%;
       background-color: #111; /* Background color */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden; /* Hide scrollbar */
     }
 
-    #video-container {
+    #rotation-notice {
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      color: #fff;
+      font-size: 1.5em;
+      text-align: center;
+      padding-top: 20%;
+      z-index: 9999;
+    }
+
+    #video-container {
+      position: relative;
       width: 100%;
       height: 100%;
       overflow: hidden;
@@ -25,6 +39,9 @@
     }
 
     video {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -83,7 +100,6 @@
     /* Responsive styling for smaller screens */
     @media only screen and (max-width: 600px) {
       #video-container {
-        position: relative; /* Set to relative for landscape mode */
         padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
       }
 
@@ -94,10 +110,18 @@
         width: 100%;
         height: 100%;
       }
+
+      #rotation-notice {
+        display: block;
+      }
     }
   </style>
 </head>
 <body>
+
+<div id="rotation-notice">
+  <p>Please rotate your phone to landscape mode for the best viewing experience.</p>
+</div>
 
 <div id="video-container">
   <video id="myVideo" controlsList="nodownload">
@@ -120,11 +144,14 @@
   var yesNoButtons = document.getElementById("yes-no-buttons");
   var yesButton = document.getElementById("yes-button");
   var noButton = document.getElementById("no-button");
+  var rotationNotice = document.getElementById("rotation-notice");
 
   playButton.addEventListener("click", function() {
     if (video.paused) {
       video.play();
       playButton.style.display = "none";
+      // Hide rotation notice when video is played
+      rotationNotice.style.display = "none";
     } else {
       video.pause();
     }
