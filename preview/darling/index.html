@@ -155,14 +155,31 @@
     }
   });
 
-  // Function to show Yes and No buttons after video ends
-  function showYesNoButtons() {
-    // Show Yes and No buttons after 1 minute and 17 seconds
-    setTimeout(function() {
+  video.ontimeupdate = function() {
+    // Check if the video has reached 1 minute and 17 seconds
+    if (video.currentTime >= 77) {
+      // Show Yes and No buttons
       yesNoButtons.style.display = "block";
-    }, 77000); // 77,000 milliseconds = 1 minute and 17 seconds
+    }
+  };
+
+  // Event listener for the "Yes" button
+  function handleYesButtonClick() {
+    // Call your custom function or display a message
+    alert("You pressed Yes! Custom function can be added here.");
+
+    // Hide the buttons after clicking "Yes"
+    yesNoButtons.style.display = "none";
+
+    // Remove the event listener to prevent multiple clicks
+    document.getElementById("yes-button").removeEventListener("click", handleYesButtonClick);
   }
+
+  document.getElementById("yes-button").addEventListener("click", handleYesButtonClick);
 </script>
+
+
+
 
 </body>
 </html>
