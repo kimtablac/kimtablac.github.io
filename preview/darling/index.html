@@ -10,9 +10,9 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      background-color: #111; /* Background color */
+      background-color: #111; 
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow: hidden; /* Hide scrollbar */
+      overflow: hidden; 
     }
 
     #rotation-notice {
@@ -84,23 +84,22 @@
     .valentine-button:hover {
       background-color: #ff3355;
     }
-
-    /* Animation for the No button */
+   
     .move-around {
       animation: none;
     }
 
-    /* Disable the No button */
+ 
     .no-button-disabled {
       pointer-events: none;
       opacity: 0.5;
       cursor: not-allowed;
     }
 
-    /* Responsive styling for smaller screens */
+
     @media only screen and (max-width: 600px) {
       #video-container {
-        padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+        padding-top: 56.25%;
       }
 
       video {
@@ -120,7 +119,7 @@
 <body>
 
 <div id="rotation-notice">
-  <p>Please rotate your phone to landscape mode for the best viewing experience.</p>
+  <p>Rotate your phone darling to landscape mode for the best viewing experience.</p>
 </div>
 
 <div id="video-container">
@@ -188,9 +187,6 @@
 
   document.getElementById("yes-button").addEventListener("click", handleYesButtonClick);
 </script>
-
-
-
 
 </body>
 </html>
