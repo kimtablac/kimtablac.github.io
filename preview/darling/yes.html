@@ -1,0 +1,118 @@
+<!-- yes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>It's a Yes!/title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden; /* Prevent scrolling of the background */
+      background: url('heart.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative; /* Position for absolute heart elements */
+    }
+
+    h1 {
+      font-size: 200px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+    }
+
+    #download-container {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #e74c3c;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c0392b;
+    }
+
+    /* Heart animation */
+    .heart {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      transform: rotate(-45deg);
+      animation: heartbeat 1s infinite alternate;
+    }
+
+    @keyframes heartbeat {
+      to {
+        transform: scale(1.3) rotate(-45deg);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 100px;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+
+    @media (orientation: landscape) and (max-width: 768px) {
+      h1 {
+        font-size: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>It's a Yes!</h1>
+
+  <div id="download-container">
+    <a href="love.mp4" download="your_video_filename.mp4">
+      <button>Download Video</button>
+    </a>
+  </div>
+
+  <!-- Heart elements -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const body = document.body;
+
+      function createHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.animationDuration = Math.random() * 2 + 1 + 's';
+        body.appendChild(heart);
+
+        // Remove the heart element after animation
+        heart.addEventListener('animationiteration', () => {
+          heart.remove();
+        });
+      }
+
+      // Create hearts at intervals
+      setInterval(createHeart, 500);
+    });
+  </script>
+</body>
+</html>
