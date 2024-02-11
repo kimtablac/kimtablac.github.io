@@ -1,4 +1,3 @@
-<!-- yes.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +62,9 @@
       transform: rotate(-45deg);
       animation: heartbeat 1s infinite alternate;
     }
-
+    .button-link {
+      text-decoration: none;
+    }
     @keyframes heartbeat {
       to {
         transform: scale(1.3) rotate(-45deg);
@@ -71,39 +72,41 @@
       }
     }
 
-/* ... (existing styles) ... */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 20vw;
+      }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 20vw;
-  }
+      button {
+        font-size: 16px;
+        width: 210px;
+        height: 60px;
+        max-width: none;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto 10px;
+      }
 
-  button {
-    font-size: 16px; /* Adjusted font size for buttons on mobile */
-    width: 100%; /* Adjusted to full width for better responsiveness */
-    max-width: none;
-    padding: 10px 20px; /* Adjust padding for buttons */
-    box-sizing: border-box; /* Include padding and border in total width and height */
-  }
+      #button-container {
+        margin-top: 10px;
+        text-align: center;
+      }
 
-  #button-container {
-    margin-top: 10px; /* Adjust top margin for button container */
-  }
-}
-
-/* ... (existing styles) ... */
-
-
+      .button-link {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
   <h1>It's a Yes!</h1>
 
   <div id="button-container">
-    <a href="love.mp4" download="your_video_filename.mp4">
+    <a href="love.mp4" download="your_video_filename.mp4" class="button-link">
       <button>Download Video</button>
     </a>
-    <a href="index.html">
+    <a href="index.html" class="button-link">
       <button>Watch Again</button>
     </a>
   </div>
