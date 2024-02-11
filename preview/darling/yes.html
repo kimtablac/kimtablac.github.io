@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>It's a Yes!/title>
+  <title>Yes Page</title>
   <style>
     body {
       display: flex;
@@ -27,8 +27,10 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
     }
 
-    #download-container {
+    #button-container {
       margin-top: 20px;
+      display: flex;
+      gap: 20px;
     }
 
     button {
@@ -86,9 +88,12 @@
 <body>
   <h1>It's a Yes!</h1>
 
-  <div id="download-container">
+  <div id="button-container">
     <a href="love.mp4" download="your_video_filename.mp4">
       <button>Download Video</button>
+    </a>
+    <a href="index.html">
+      <button>Watch Again</button>
     </a>
   </div>
 
