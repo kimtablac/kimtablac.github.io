@@ -13,28 +13,30 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
-      overflow: hidden; /* Prevent scrolling of the background */
+      overflow: hidden;
       background: url('heart.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      position: relative; /* Position for absolute heart elements */
+      position: relative;
     }
 
     h1 {
-      font-size: 200px;
+      font-size: 12vw;
       margin-bottom: 20px;
-      text-transform: uppercase; /* Convert text to uppercase */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
-      white-space: nowrap; /* Prevent line break */
+      text-transform: uppercase;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      text-align: center;
     }
 
     #button-container {
       margin-top: 20px;
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
+      max-width: 600px;
     }
 
     button {
@@ -46,14 +48,13 @@
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      width: 100%; /* Full width on smaller screens */
+      max-width: 300px;
     }
 
     button:hover {
       background-color: #c0392b;
     }
 
-    /* Heart animation */
     .heart {
       position: absolute;
       width: 10px;
@@ -70,46 +71,29 @@
       }
     }
 
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 80px;
-        text-align: center;
-      }
+/* ... (existing styles) ... */
 
-      button {
-        padding: 10px 20px;
-        font-size: 14px;
-      }
-    }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20vw;
+  }
 
-    @media (min-width: 769px) and (max-width: 1024px) {
-      h1 {
-        font-size: 120px;
-      }
-    }
+  button {
+    font-size: 16px; /* Adjusted font size for buttons on mobile */
+    width: 100%; /* Adjusted to full width for better responsiveness */
+    max-width: none;
+    padding: 10px 20px; /* Adjust padding for buttons */
+    box-sizing: border-box; /* Include padding and border in total width and height */
+  }
 
-    @media (min-width: 1025px) and (orientation: portrait) {
-      h1 {
-        font-size: 160px;
-      }
-    }
+  #button-container {
+    margin-top: 10px; /* Adjust top margin for button container */
+  }
+}
 
-    @media (min-width: 1025px) and (orientation: landscape) {
-      h1 {
-        font-size: 180px;
-      }
-    }
+/* ... (existing styles) ... */
 
-    @media (min-width: 1025px) {
-      #button-container {
-        flex-direction: row; /* Buttons next to each other on desktop */
-      }
 
-      button {
-        width: auto; /* Adjust button width on desktop */
-      }
-    }
   </style>
 </head>
 <body>
@@ -124,7 +108,6 @@
     </a>
   </div>
 
-  <!-- Heart elements -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const body = document.body;
@@ -136,13 +119,11 @@
         heart.style.animationDuration = Math.random() * 2 + 1 + 's';
         body.appendChild(heart);
 
-        // Remove the heart element after animation
         heart.addEventListener('animationiteration', () => {
           heart.remove();
         });
       }
 
-      // Create hearts at intervals
       setInterval(createHeart, 500);
     });
   </script>
