@@ -24,6 +24,7 @@
     h1 {
       font-size: 200px;
       margin-bottom: 20px;
+      text-transform: uppercase; /* Convert text to uppercase */
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
     }
 
@@ -78,9 +79,9 @@
       }
     }
 
-    @media (orientation: landscape) and (max-width: 768px) {
+    @media (max-width: 768px) and (orientation: landscape) {
       h1 {
-        font-size: 150px;
+        font-size: 120px;
       }
     }
   </style>
