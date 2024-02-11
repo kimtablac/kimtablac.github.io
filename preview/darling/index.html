@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For You Alone</title>
+  <title>For You Alone</title> <!-- Feb 12, 2024 -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     body, html {
@@ -89,13 +89,11 @@
       animation: none;
     }
 
- 
     .no-button-disabled {
       pointer-events: none;
       opacity: 0.5;
       cursor: not-allowed;
     }
-
 
     @media only screen and (max-width: 600px) {
       #video-container {
@@ -127,10 +125,9 @@
     <source src="love.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <!-- Play button overlay -->
+
   <div id="play-button">&#9654;</div>
 
-  <!-- Yes and No buttons -->
   <div id="yes-no-buttons">
     <button id="yes-button" class="valentine-button">Yes</button>
     <button id="no-button" class="valentine-button move-around no-button-disabled">No</button>
@@ -147,7 +144,6 @@
     if (video.paused) {
       video.play();
       playButton.style.display = "none";
-      // Hide rotation notice when the video is played
       rotationNotice.style.display = "none";
     } else {
       video.pause();
@@ -155,25 +151,15 @@
   });
 
   video.ontimeupdate = function() {
-    // Check if the video has reached 1 minute and 17 seconds
     if (video.currentTime >= 77) {
-      // Show Yes and No buttons
       yesNoButtons.style.display = "block";
     }
   };
 
-  // Event listener for the "Yes" button
   function handleYesButtonClick() {
-    // Call your custom function or display a message
     alert("You pressed Yes! I love you, darling!.");
-
-    // Hide the buttons after clicking "Yes"
     yesNoButtons.style.display = "none";
-
-    // Remove the event listener to prevent multiple clicks
     document.getElementById("yes-button").removeEventListener("click", handleYesButtonClick);
-
-    // Redirect to the additional page (yes.html) after clicking "Yes"
     window.location.href = "yes.html";
   }
 
