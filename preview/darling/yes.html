@@ -43,6 +43,7 @@
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      width: 100%; /* Full width on smaller screens */
     }
 
     button:hover {
@@ -79,9 +80,25 @@
       }
     }
 
-    @media (max-width: 768px) and (orientation: landscape) {
+    @media (min-width: 769px) and (max-width: 1024px) {
       h1 {
-        font-size: 120px;
+        font-size: 150px;
+      }
+    }
+
+    @media (min-width: 1025px) and (orientation: landscape) {
+      h1 {
+        font-size: 180px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      #button-container {
+        flex-direction: row; /* Buttons next to each other on desktop */
+      }
+
+      button {
+        width: auto; /* Adjust button width on desktop */
       }
     }
   </style>
