@@ -1,3 +1,4 @@
+<!-- yes.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +34,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 600px;
     }
 
     button {
@@ -60,11 +63,9 @@
       transform: rotate(-45deg);
       animation: heartbeat 1s infinite alternate;
     }
-    
     .button-link {
-      text-decoration: none;
-    }
-    
+  text-decoration: none; /* Remove underline from links */
+}
     @keyframes heartbeat {
       to {
         transform: scale(1.3) rotate(-45deg);
@@ -72,37 +73,45 @@
       }
     }
 
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 20vw;
-      }
+/* ... (existing styles) ... */
 
-      button {
-        font-size: 16px;
-        width: 210px;
-        height: 60px;
-        max-width: none;
-        padding: 10px 20px;
-        box-sizing: border-box;
-        display: block;
-        margin: 0 auto 10px;
-      }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20vw;
+  }
 
-      #button-container {
-        margin-top: 10px;
-        text-align: center;
-      }
+  button {
+    font-size: 16px; /* Adjusted font size for buttons on mobile */
+    width: 210px; /* Set the width to 210px */
+    height: 60px; /* Set the height to 60px */
+    max-width: none;
+    padding: 10px 20px; /* Adjust padding for buttons */
+    box-sizing: border-box; /* Include padding and border in total width and height */
+    display: block; /* Set buttons to display as block elements on mobile */
+    margin: 0 auto 10px; /* Center buttons and add some space at the bottom */
+  }
 
-      .button-link {
-        width: 100%;
-      }
-    }
+  #button-container {
+    margin-top: 10px; /* Adjust top margin for button container */
+    text-align: center; /* Center buttons in the container */
+  }
+
+  .button-link {
+    width: 100%; /* Make links take full width */
+  }
+}
+
+/* ... (existing styles) ... */
+
+
+
   </style>
 </head>
 <body>
   <h1>It's a Yes!</h1>
 
-  <div id="button-container">
+<!-- ... (existing HTML) ... -->
+<div id="button-container">
     <a href="love.mp4" download="your_video_filename.mp4" class="button-link">
       <button>Download Video</button>
     </a>
@@ -110,6 +119,9 @@
       <button>Watch Again</button>
     </a>
   </div>
+  <!-- ... (existing HTML) ... -->
+  
+  
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
