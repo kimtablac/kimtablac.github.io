@@ -1,0 +1,15 @@
+.customButtonShadowLayer {
+  background-color: #ffe03c !important; /* yellow shade */
+  color: #000 !important;
+  border: 1px solid #000 !important;
+  padding: 12px 28px !important;
+  font-weight: 500 !important;
+  position: relative !important;
+  box-shadow: 5px 5px 0 #ffe03c, 6px 6px 0 #000 !important; /* layered effect */
+  transition: all 0.3s ease !important;
+}
+
+.customButtonShadowLayer:hover {
+  transform: translateY(-2px) translateX(-2px) !important;
+  box-shadow: 7px 7px 0 #000 !important;
+}
